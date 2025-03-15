@@ -83,7 +83,8 @@ export default function MainHeader() {
           sx={{
             display: "flex",
             alignItems: "center",
-            justifyContent: "center"
+            justifyContent: "center",
+            mt: 2
           }}
         >
           <Stack
@@ -97,14 +98,14 @@ export default function MainHeader() {
               <Image
                 src="/assets/vertria-logo.png"
                 alt="vertria Logo"
-                width={150}
-                height={60}
+                width={80}
+                height={40}
                 priority
               />
             </NextLink>
 
             {/* <Divider sx={{ my: 2, color: 'yellow', width: 150 }} /> */}
-            <Box sx={{ width: 900, height: 1.1, bgcolor: "yellow", my: 0.5 }} />
+            <Box sx={{ width: 900, height: '0.1px', bgcolor: "#FFDC58", my: 1 }} />
           </Stack>
 
           {/* <Box sx={{ flexGrow: 1 }} /> */}
@@ -131,7 +132,7 @@ export default function MainHeader() {
         </Container>
       </ToolbarStyle>
 
-      {isOffset && <ToolbarShadowStyle />}
+      {/* {isOffset && <ToolbarShadowStyle />} */}
     </AppBar>
   );
 }

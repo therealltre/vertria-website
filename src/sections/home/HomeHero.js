@@ -14,7 +14,7 @@ import { MotionContainer, varFade } from "../../components/animate";
 import Image from "next/image";
 import HomeFaq from "./HomeFaq";
 
-import { HomeMenteeTestimonials, HomeTeam } from ".";
+import { HomeMenteeTestimonials, HomeProgram, HomeSocials, HomeTeam } from ".";
 import HomeAd from "./HomeAd";
 
 // ----------------------------------------------------------------------
@@ -142,13 +142,15 @@ export default function HomeHero() {
           height: "auto",
           background: theme.palette.background.default,
           position: "relative",
-          zIndex: 2
+          zIndex: 2,
         }}
       >
-        <HomeTeam />
-        <HomeAd />
-        <HomeMenteeTestimonials />
-        <HomeFaq />
+        {/* <HomeTeam /> */}
+        {/* <HomeAd /> */}
+        <HomeProgram />
+        <HomeSocials />
+        {/* <HomeMenteeTestimonials /> */}
+        {/* <HomeFaq /> */}
       </Box>
     </MotionContainer>
   );

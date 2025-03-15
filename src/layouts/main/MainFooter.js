@@ -11,7 +11,7 @@ import {
   Stack,
   TextField,
   Box,
-  Button,
+  Button
 } from "@mui/material";
 // routes
 import { PATH_PAGE } from "../../routes/paths";
@@ -26,25 +26,25 @@ const LINKS = [
   {
     headline: "vertria",
     children: [
-      { name: "Home", href: "/" },
-      { name: "About us", href: PATH_PAGE.about },
-      { name: "Services", href: "#" },
-      { name: "Solutions", href: "#" },
-      { name: "Blog", href: "#" },
-      { name: "Carrers", href: "#" },
+      { name: "Home" }, //add href: to the after content received
+      { name: "About us" },
+      { name: "Services" },
+      { name: "Solutions" },
+      { name: "Blog" },
+      { name: "Carrers" }
       // { name: 'FAQs', href: PATH_PAGE.faqs },
-    ],
+    ]
   },
   {
     headline: "COmpany",
     children: [
-      { name: "Our Story", href: "#" },
-      { name: "Case Studies ", href: "#" },
-      { name: "Testimonials ", href: "#" },
-      { name: "Partners ", href: "#" },
-      { name: "FAQs", href: "#" },
-    ],
-  },
+      { name: "Our Story" },
+      { name: "Case Studies " },
+      { name: "Testimonials " },
+      { name: "Partners " },
+      { name: "FAQs" }
+    ]
+  }
   // {
   //   headline: "Contact",
   //   children: [
@@ -56,7 +56,8 @@ const LINKS = [
 
 const RootStyle = styled("div")(({ theme }) => ({
   position: "relative",
-  backgroundColor: "#421420",
+  backgroundColor: "#060606"
+  // backgroundColor: "#421420",
 }));
 
 // ----------------------------------------------------------------------
@@ -83,39 +84,40 @@ export default function MainFooter() {
             <Typography sx={{ color: "common.white", mb: 2 }}>
               Join a Newletter
             </Typography>
-            <Typography sx={{ color: "common.white", mb: 2 }}>
+            {/* <Typography sx={{ color: "common.white", mb: 2 }}>
               Your Email
-            </Typography>
-            <Stack spacing={2} direction={"row"}>
+            </Typography> */}
+            <Stack spacing={2} direction={{ xs: "row", md: "row" }}>
               <TextField
                 label="Enter Your Email"
                 name="email"
-                fullWidth
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     "&:hover .MuiOutlinedInput-notchedOutline": {
-                      borderColor: "yellow", // Border color on hover
-                    },
+                      borderColor: "yellow" // Border color on hover
+                    }
                   },
                   "& .MuiInputLabel-root": {
-                    color: "gray", // Default label color
+                    color: "gray" // Default label color
                   },
                   "& .MuiInputLabel-root.Mui-focused": {
-                    color: "yellow", // Label color when focused
-                  },
+                    color: "yellow" // Label color when focused
+                  }
                 }}
               />
 
               <Button
                 variant="contained"
                 sx={{
+                  bgcolor: "#FFDC58",
+                  color: "black",
                   border: "2px solid transparent",
                   "&:hover": {
-                    border: "2px solid yellow",
+                    border: "2px solid yellow"
                   },
                   "&:focus": {
-                    border: "2px solid yellow",
-                  },
+                    border: "2px solid yellow"
+                  }
                 }}
               >
                 Subscribe
@@ -133,11 +135,11 @@ export default function MainFooter() {
           <Grid item xs={12} md={3}>
             <Stack
               spacing={10}
-              direction={{ xs: "column", md: "row" }}
-              justifyContent="space-between"
+              direction={{ xs: "row", md: "row" }}
+              justifyContent="center"
             >
               {LINKS.map((list) => (
-                <Stack key={list.headline} spacing={3}>
+                <Stack key={list.headline} spacing={1}>
                   <Typography
                     component="p"
                     variant="overline"
@@ -146,7 +148,22 @@ export default function MainFooter() {
                     {list.headline}
                   </Typography>
                   {list.children.map((link) => (
-                    <NextLink
+                    <Link
+                      color="gray"
+                      variant="body2"
+                      underline="none"
+                      sx={{
+                        display: "block",
+                        textDecoration: "none",
+                        "&:hover": {
+                          color: "primary.dark" // Apply secondary.main on hover
+                        }
+                      }}
+                    >
+                      {link.name}
+                    </Link>
+                  ))}
+                  {/* <NextLink
                       key={link.name}
                       href={link.href}
                       passhref="true"
@@ -160,14 +177,13 @@ export default function MainFooter() {
                           display: "block",
                           textDecoration: "none",
                           "&:hover": {
-                            color: "primary.dark", // Apply secondary.main on hover
-                          },
+                            color: "primary.dark" // Apply secondary.main on hover
+                          }
                         }}
                       >
                         {link.name}
                       </Link>
-                    </NextLink>
-                  ))}
+                    </NextLink> */}
                 </Stack>
               ))}
             </Stack>
@@ -188,7 +204,7 @@ export default function MainFooter() {
               designed to revolutionize the way businesses
             </Typography>
 
-            <Stack
+            {/* <Stack
               direction="row"
               justifyContent={{ xs: "center", md: "flex-start" }}
               sx={{ mt: 5, mb: { xs: 5, md: 0 } }}
@@ -196,7 +212,7 @@ export default function MainFooter() {
               <Typography sx={{ color: "common.white" }}>
                 AI Innovative Technology website
               </Typography>
-            </Stack>
+            </Stack> */}
           </Grid>
         </Grid>
         <Divider sx={{ my: 3 }} />
@@ -209,7 +225,7 @@ export default function MainFooter() {
           sx={{
             mt: 5,
             pb: 5,
-            flexWrap: "wrap",
+            flexWrap: "wrap"
           }}
         >
           <Typography
@@ -217,7 +233,7 @@ export default function MainFooter() {
             variant="body2"
             sx={{ fontSize: 13, color: "common.white" }}
           >
-            AI Innovative Technology website
+            All Rights Reserved © Vertria 2025
           </Typography>
 
           <Stack direction="row" alignItems="center" spacing={1}>
