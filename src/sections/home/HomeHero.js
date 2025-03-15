@@ -105,7 +105,7 @@ export default function HomeHero() {
                     // transition={{ duration: 4, repeat: Infinity }}
                   >
                     <Image
-                      src={"/assets/vertria-v-button.svg"}
+                      src={"/assets/vertria-v-button.png"}
                       width={70}
                       height={70}
                     />

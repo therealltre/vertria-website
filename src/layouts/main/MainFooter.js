@@ -204,7 +204,8 @@ export default function MainFooter() {
           direction="row"
           alignItems="center"
           justifyContent="space-between"
-          spacing={5}
+          spacing={2}
+          gap={2}
           sx={{
             mt: 5,
             pb: 5,
