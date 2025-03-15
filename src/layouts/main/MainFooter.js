@@ -11,7 +11,7 @@ import {
   Stack,
   TextField,
   Box,
-  Button
+  Button,
 } from "@mui/material";
 // routes
 import { PATH_PAGE } from "../../routes/paths";
@@ -31,9 +31,9 @@ const LINKS = [
       { name: "Services", href: "#" },
       { name: "Solutions", href: "#" },
       { name: "Blog", href: "#" },
-      { name: "Carrers", href: "#" }
+      { name: "Carrers", href: "#" },
       // { name: 'FAQs', href: PATH_PAGE.faqs },
-    ]
+    ],
   },
   {
     headline: "COmpany",
@@ -42,9 +42,9 @@ const LINKS = [
       { name: "Case Studies ", href: "#" },
       { name: "Testimonials ", href: "#" },
       { name: "Partners ", href: "#" },
-      { name: "FAQs", href: "#" }
-    ]
-  }
+      { name: "FAQs", href: "#" },
+    ],
+  },
   // {
   //   headline: "Contact",
   //   children: [
@@ -56,7 +56,7 @@ const LINKS = [
 
 const RootStyle = styled("div")(({ theme }) => ({
   position: "relative",
-  backgroundColor: "#421420"
+  backgroundColor: "#421420",
 }));
 
 // ----------------------------------------------------------------------
@@ -87,8 +87,39 @@ export default function MainFooter() {
               Your Email
             </Typography>
             <Stack spacing={2} direction={"row"}>
-              <TextField label="Enter Your Email" name="email" fullWidth />
-              <Button variant="contained">Subscribe</Button>
+              <TextField
+                label="Enter Your Email"
+                name="email"
+                fullWidth
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    "&:hover .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "yellow", // Border color on hover
+                    },
+                  },
+                  "& .MuiInputLabel-root": {
+                    color: "gray", // Default label color
+                  },
+                  "& .MuiInputLabel-root.Mui-focused": {
+                    color: "yellow", // Label color when focused
+                  },
+                }}
+              />
+
+              <Button
+                variant="contained"
+                sx={{
+                  border: "2px solid transparent",
+                  "&:hover": {
+                    border: "2px solid yellow",
+                  },
+                  "&:focus": {
+                    border: "2px solid yellow",
+                  },
+                }}
+              >
+                Subscribe
+              </Button>
             </Stack>
             <Stack
               direction="row"
@@ -129,8 +160,8 @@ export default function MainFooter() {
                           display: "block",
                           textDecoration: "none",
                           "&:hover": {
-                            color: "primary.dark" // Apply secondary.main on hover
-                          }
+                            color: "primary.dark", // Apply secondary.main on hover
+                          },
                         }}
                       >
                         {link.name}
@@ -148,7 +179,7 @@ export default function MainFooter() {
                 alt="brand name"
                 width={200}
                 height={50}
-                 sx={{ mx: { xs: "auto", md: "inherit" } }}
+                sx={{ mx: { xs: "auto", md: "inherit" } }}
                 priority
               />
             </NextLink>
@@ -177,7 +208,7 @@ export default function MainFooter() {
           sx={{
             mt: 5,
             pb: 5,
-            flexWrap: "wrap"
+            flexWrap: "wrap",
           }}
         >
           <Typography

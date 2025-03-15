@@ -8,14 +8,14 @@ import {
   Container,
   Divider,
   Link,
-  Typography
+  Typography,
 } from "@mui/material";
 // components
 import Image from "../../components/Image";
 import {
   MotionContainer,
   MotionViewport,
-  varFade
+  varFade,
 } from "../../components/animate";
 import NextLink from "next/link";
 import AboutWhat from "./AboutWhat";
@@ -37,8 +37,8 @@ const RootStyle = styled("div")(({ theme }) => ({
   backgroundImage: `url(/assets/images/about/about-hero.png)`,
   textAlign: "center",
   [theme.breakpoints.up("md")]: {
-    paddingBottom: theme.spacing(15)
-  }
+    paddingBottom: theme.spacing(15),
+  },
 }));
 
 const CardStyle = styled(Card)(({ theme }) => {
@@ -58,10 +58,10 @@ const CardStyle = styled(Card)(({ theme }) => {
     [theme.breakpoints.up("md")]: {
       boxShadow: "none",
       backgroundColor:
-        theme.palette.grey[theme.palette.mode === "light" ? 200 : 800]
+        theme.palette.grey[theme.palette.mode === "light" ? 200 : 800],
     },
     "&.cardLeft": {
-      [theme.breakpoints.up("md")]: { marginTop: -40 }
+      [theme.breakpoints.up("md")]: { marginTop: -40 },
     },
     "&.cardCenter": {
       [theme.breakpoints.up("md")]: {
@@ -81,10 +81,10 @@ const CardStyle = styled(Card)(({ theme }) => {
           height: "calc(100% - 40px)",
           borderRadius: Number(theme.shape.borderRadius) * 2,
           backgroundColor: theme.palette.background.paper,
-          boxShadow: `-20px 20px 40px 0 ${shadowCard(0.12)}`
-        }
-      }
-    }
+          boxShadow: `-20px 20px 40px 0 ${shadowCard(0.12)}`,
+        },
+      },
+    },
   };
 });
 
@@ -97,7 +97,7 @@ const HeroImgStyle = styled(m.img)(({ theme }) => ({
   height: "100vh",
   objectfit: "cover",
   backgroundColor: "#060606",
-  opacity: 0.5
+  opacity: 0.5,
 }));
 
 // ----------------------------------------------------------------------
@@ -119,7 +119,7 @@ export default function AboutHero() {
           <Box
             sx={{
               textAlign: "center",
-              mb: { xs: 10, md: 10 }
+              mb: { xs: 10, md: 10 },
             }}
           >
             <Image
@@ -136,7 +136,7 @@ export default function AboutHero() {
                 opacity: 0.48,
                 my: "auto",
                 position: "absolute",
-                display: { xs: "none", md: "block" }
+                display: { xs: "none", md: "block" },
               }}
             />
             <m.div variants={varFade().inUp}>
@@ -147,7 +147,7 @@ export default function AboutHero() {
                   fontWeight: 700,
                   lineHeight: 1,
                   color: "common.white",
-                  textAlign: "center" // Ensure text is centered
+                  textAlign: "center", // Ensure text is centered
                   // margin: "0 auto",    // Center text block
                 }}
               >
@@ -160,18 +160,11 @@ export default function AboutHero() {
                   marginTop: 2,
                   color: "common.white",
                   fontSize: { xs: 18, lg: 24 },
-                  textAlign: "center" // Aligns all text to center
+                  textAlign: "center", // Aligns all text to center
                 }}
               >
-                Web3 Africa Group (W3AG) is a visionary organization committed
-                to spearheading the decentralized digital revolution across
-                Africa. As the parent company of various Web 3 hubs across the
-                continent, W3AG aims to establish innovation centers that will
-                drive education, policy advocacy, and community development in
-                the Web 3 ecosystem. Our flagship hub, Web 3 Accra (W3A), based
-                in Ghana, serves as a pioneering incubator and a launchpad for
-                entrepreneurs, creators, and innovators within the decentralized
-                space.
+                Vertria is a cutting-edge AI technology platform designed to
+                revolutionize the way businesses
               </Typography>
             </m.div>
           </Box>
@@ -182,16 +175,16 @@ export default function AboutHero() {
           height: "auto",
           background: theme.palette.background.default,
           position: "relative",
-          zIndex: 2
+          zIndex: 2,
         }}
       >
-        <AboutWhat id="about-what" />
+        {/* <AboutWhat id="about-what" />
         <AboutVision id="about-vision" />
         <Divider
           orientation="vertical"
           sx={{ my: 10, mx: "auto", width: 2, height: 40 }}
-        />
-        <AboutTeam />
+        /> */}
+        {/* <AboutTeam /> */}
         {/* <AboutTestimonials /> */}
       </Box>
     </MotionContainer>
