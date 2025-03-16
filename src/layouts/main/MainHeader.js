@@ -103,9 +103,15 @@ export default function MainHeader() {
                 priority
               />
             </NextLink>
-
             {/* <Divider sx={{ my: 2, color: 'yellow', width: 150 }} /> */}
-            <Box sx={{ width: 900, height: '0.1px', bgcolor: "#FFDC58", my: 1 }} />
+            <Box
+              sx={{
+                width: 900,
+                height: { md: "0.1px", xs: 1.2 },
+                bgcolor: "#FFDC58",
+                my: 1
+              }}
+            />{" "}
           </Stack>
 
           {/* <Box sx={{ flexGrow: 1 }} /> */}
